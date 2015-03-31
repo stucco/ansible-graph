@@ -1,0 +1,4 @@
+---
+
+- name: do stuff here
+  command: echo "do the stuff"
