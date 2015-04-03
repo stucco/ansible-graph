@@ -7,13 +7,13 @@
   service: name=titan state=restarted
 
 - name: download graph-init repo
-  git: repo=https://github.com/stucco/graph-init.git dest={{ stucco_graph-init_dir }}
+  git: repo=https://github.com/stucco/graph-init.git dest={{ stucco_graph_init_dir }}
 
 - name: build schema and index application 
-  command: ./schema-build.sh chdir={{ stucco_graph-init_dir }}
+  command: ./schema-build.sh chdir={{ stucco_graph_init_dir }}
 
 - name: wait for titan to start
   wait_for: port=8184 delay=10
 
 - name: populate titan with schema and build indexes
-  command: ./populate-schema-indexes.sh chdir={{ stucco_graph-init_dir }}
+  command: ./populate-schema-indexes.sh chdir={{ stucco_graph_init_dir }}
