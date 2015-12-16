@@ -1,1 +1,3 @@
 stucco_graph_init_dir: "{{ stucco_dir }}/graph-init"
+cassandra_startup_timeout: 180
+cassandra_shutdown_timeout: 180

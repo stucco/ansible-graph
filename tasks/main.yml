@@ -3,6 +3,9 @@
 - name: Copy the rexster configuration template
   template: src=rexster-cassandra-es.xml dest={{ titan_path }}/conf/rexster-cassandra-es.xml
 
+- name: Copy the titan start script
+  template: src=titan.sh dest={{ titan_path }}/bin/titan.sh
+
 - name: make sure titan is running
   service: name=titan state=restarted
 
